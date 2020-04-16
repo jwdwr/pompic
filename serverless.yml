@@ -10,12 +10,18 @@ custom:
     packRequirements: false
   pythonRequirements:
     dockerizePip: non-linux
+  bucket: pompic-dreams
 
 provider:
   name: aws
   runtime: python3.6
   stage: dev
   region: us-east-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:PutObject
+      Resource: "arn:aws:s3:::${self:custom.bucket}/*"
 
 functions:
   app:
@@ -23,3 +29,5 @@ functions:
     events:
       - http: ANY /
       - http: 'ANY {proxy+}'
+    environment:
+      DREAMS_BUCKET: ${self:custom.bucket}

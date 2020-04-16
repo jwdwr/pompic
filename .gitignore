@@ -130,3 +130,12 @@ dmypy.json
 
 # node
 node_modules/
+
+# serverless
+admin.env
+.env
+_meta
+.serverless
+
+# vscode
+.vscode
