@@ -1,0 +1,24 @@
+{
+  "name": "dreamvault",
+  "version": "1.0.0",
+  "description": "a place to keep your dreams",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mimsy/dreamvault.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mimsy/dreamvault/issues"
+  },
+  "homepage": "https://github.com/mimsy/dreamvault#readme",
+  "devDependencies": {
+    "serverless-python-requirements": "^5.1.0",
+    "serverless-wsgi": "^1.7.4"
+  }
+}
