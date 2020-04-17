@@ -1,5 +1,5 @@
 {
-  "name": "dreamvault",
+  "name": "pompic",
   "version": "1.0.0",
   "description": "a place to keep your dreams",
   "main": "index.js",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mimsy/dreamvault.git"
+    "url": "git+https://github.com/mimsy/pompic.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mimsy/dreamvault/issues"
+    "url": "https://github.com/mimsy/pompic/issues"
   },
-  "homepage": "https://github.com/mimsy/dreamvault#readme",
+  "homepage": "https://github.com/mimsy/pompic#readme",
   "devDependencies": {
     "serverless-python-requirements": "^5.1.0",
     "serverless-wsgi": "^1.7.4"
