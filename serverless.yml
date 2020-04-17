@@ -11,6 +11,7 @@ custom:
   pythonRequirements:
     dockerizePip: non-linux
   bucket: pompic-dreams
+  dreams_table: dreams
 
 provider:
   name: aws
@@ -49,3 +50,4 @@ functions:
           authorizer: aws_iam
     environment:
       DREAMS_BUCKET: ${self:custom.bucket}
+      DREAMS_TABLE: ${self:custom.dreams_table}
