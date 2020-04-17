@@ -22,12 +22,30 @@ provider:
       Action:
         - s3:PutObject
       Resource: "arn:aws:s3:::${self:custom.bucket}/*"
+    - Effect: Allow
+      Action:
+        - dynamodb:DescribeTable
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: "arn:aws:dynamodb:us-east-1:063042198829:table/*"
 
 functions:
   app:
-    handler: wsgi.handler
+    handler: wsgi_handler.handler
     events:
-      - http: ANY /
-      - http: 'ANY {proxy+}'
+      - http:
+          path: /
+          method: any
+          cors: true
+          authorizer: aws_iam
+      - http:
+          path: /{proxy+}
+          method: any
+          cors: true
+          authorizer: aws_iam
     environment:
       DREAMS_BUCKET: ${self:custom.bucket}
